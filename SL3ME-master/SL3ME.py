@@ -11,7 +11,9 @@ def calculate_SLME( material_eV_for_absorbance_data, material_absorbance_data,
 	if absorbance_in_inverse_centimeters:
 		material_absorbance_data = material_absorbance_data * 100 
 
-	from numpy import sys, loadtxt, pi,  exp, zeros, linspace
+	# from numpy import sys, loadtxt, pi,  exp, zeros, linspace
+	import sys
+	from numpy import loadtxt, pi, exp, zeros, linspace
 	# For flat plate solar panels, we want the "Global Tilt" spectra, this file is assumed to be in the directory
 	try:
 		solar_spectra_wavelength, solar_spectra_irradiance  = loadtxt("am1.5G.dat", usecols = [0,1], unpack = True, skiprows=2)
@@ -114,8 +116,8 @@ def calculate_SLME( material_eV_for_absorbance_data, material_absorbance_data,
 if __name__ == '__main__': # This condition is only true if you are executing this file. If you call this file as a library, this condition will be False
 
 
-	material_direct_allowed_gap = 0.182   #CdTe
-	material_indirect_gap = 0.182        #CdTe
+	material_direct_allowed_gap = 1.707   #CdTe
+	material_indirect_gap = 1.707        #CdTe
 
 	# This example file is sort of like CdTe's absorption data. (It's a line between the endpoints.)  Good enough for an example, but don't use it for actual scientific data.
 	file_name = "mock_CdTe_mat_abs.dat"

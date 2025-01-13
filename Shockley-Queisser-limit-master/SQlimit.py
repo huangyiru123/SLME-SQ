@@ -42,6 +42,7 @@ AM15flux = AM15 / (Es*eV)  # number of photon m^-2 eV^-1 s^-1
 
 
 class SQlim(object):
+
     def __init__(self, T=300, EQE_EL=1.0, intensity=1.0):
         """
         T: temperature in K
@@ -575,28 +576,29 @@ if __name__ == "__main__":
     SQ = SQlim()
     SQ.plot()
     SQ.plotall()
-    SQ.E_loss(0.182)
-    SQ.available_E(0.182)
+    SQ.E_loss(1.707)
+    SQ.available_E(1.707)
+    #修改你想要的带隙！！在这里 这里引用了前面的类
     plt.show()
 
-    """
-    # plot Voc, Jsc, FF, PCE
-    SQ.plotall() # plot Voc, Jsc, FF, PCE in one figure with 4 subplots
-    SQ.plot("Voc") # plot Voc only.
-    SQ.plot("PCE") # plot Jsc...otSQ.E_loss(Eg)Egher valid inputs: "Jsc", "FF", "J0"
-
-    # get Voc, Jsc, FF, PCE for a specific bandgap
-    SQ.get_paras(1.688)  # print out the values
-    SQ.get_paras(1.688, toPrint=False) # get a dictionary of parameters
-
-    # plot available energy and loss for a specific bandgap
-    SQ.E_loss(1.3)
-
-    # plot available energy for cells with many different bandgap materials
-    #SQ.available_E([0.9, .6,1.5,1.2])
-
-    ### calculate and plot JV curve
-    SQ.simulate_JV(1.3, plot=True)
-    """
+    # """
+    # # plot Voc, Jsc, FF, PCE
+    # SQ.plotall() # plot Voc, Jsc, FF, PCE in one figure with 4 subplots
+    # SQ.plot("Voc") # plot Voc only.
+    # SQ.plot("PCE") # plot Jsc...otSQ.E_loss(Eg)Egher valid inputs: "Jsc", "FF", "J0"
+    #
+    # # get Voc, Jsc, FF, PCE for a specific bandgap
+    # SQ.get_paras(1.688)  # print out the values
+    # SQ.get_paras(1.688, toPrint=False) # get a dictionary of parameters
+    #
+    # # plot available energy and loss for a specific bandgap
+    # SQ.E_loss(1.3)
+    #
+    # # plot available energy for cells with many different bandgap materials
+    # #SQ.available_E([0.9, .6,1.5,1.2])
+    #
+    # ### calculate and plot JV curve
+    # SQ.simulate_JV(1.3, plot=True)
+    # """
 
 

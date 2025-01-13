@@ -1,0 +1,23 @@
+# 假设这个文件是 main.py
+
+# 如果SQlim定义在不同的文件中
+from SQlimit import SQlim  # 导入你刚才定义的SQlim类
+
+def main():
+    # 创建SQlim对象
+    SQ = SQlim()
+
+    # 设置带隙为1.7并模拟J-V曲线
+    SQ.simulate_JV(Eg=1.707)
+
+    # 获取带隙为1.7时的性能参数
+    paras = SQ.get_paras(Eg=1.707)
+    print("Performance parameters for Eg=1.707 eV:")
+    print(paras)
+
+    # 如果需要，可以绘制J-V曲线
+    SQ.plot_JV()
+
+# 运行主程序
+if __name__ == "__main__":
+    main()
